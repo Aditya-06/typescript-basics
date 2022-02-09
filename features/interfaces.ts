@@ -1,3 +1,4 @@
+// Type reportable because 
 const oldCivic = {
     name: 'Civic',
     year: 1996,
@@ -20,20 +21,19 @@ const printVehicle = (vehicle: { name: string; year: number, broken: boolean }):
 
 // To fix this dupliaction -> Create Interface
 // This just specifies necessary properties -> additional props can be present
-interface Vehicle {
-    name: string,
-    broken: boolean
-    year: number,
+// We should make this generic as we want to promote code reuseability
+interface Reportable {
+    // name: string,
+    // broken: boolean
+    // year: number,
     // this tells the compiler that any object with type Vehicle need to have a method of summary which returns a string
     // also no params are allowed
     summary(): string
 }
 
 // We can directly use vehicle now
-const printcar = (vehicle: Vehicle): void => {
-    console.log(`Name: ${vehicle.name}`)
-    console.log(`Year: ${vehicle.year}`) 
-    console.log(`Broken?: ${vehicle.broken}`)   
+const printcar = (vehicle: Reportable): void => {
+    console.log(`Summary: ${vehicle.summary}`)  
 }
 
 // This will also check if the object created meets the specifications of the interface
