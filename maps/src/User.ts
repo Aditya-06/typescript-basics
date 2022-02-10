@@ -1,8 +1,11 @@
 // generate fake data
 import faker from 'faker';
+import { LocationObject } from './CustomMap';
 
 // Exporting a class therefore Uppercase
-export class User {
+// If we do not want errors while calling, we can implement it in class defination
+// this will point any mismatch/error in the interfacce and the class in the class file itself
+export class User implements LocationObject {
   // properties of the user
   name: string;
   location: {

@@ -1,8 +1,9 @@
 // generate fake data
 import faker from 'faker';
+import { LocationObject } from './CustomMap';
 
 // Exporting a class therefore Uppercase
-export class Company {
+export class Company implements LocationObject {
   // properties of the user
   companyName: string;
   catchPhrase: string;
