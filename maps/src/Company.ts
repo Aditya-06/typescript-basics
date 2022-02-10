@@ -1,5 +1,5 @@
 // generate fake data
-import faker from "faker";
+import faker from 'faker';
 
 // Exporting a class therefore Uppercase
 export class Company {
@@ -20,5 +20,11 @@ export class Company {
       lat: parseFloat(faker.address.latitude()),
       lng: parseFloat(faker.address.longitude()),
     };
+  }
+
+  markerContent(): string {
+    return `<h3>Company: ${this.companyName}</h3>
+    <p>${this.catchPhrase}</p>
+    `;
   }
 }
